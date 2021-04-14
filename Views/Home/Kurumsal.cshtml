@@ -1,0 +1,65 @@
+﻿@model shnYapi5._0.Models.ViewModel.kurumsalViewModel;
+
+@{
+    ViewData["Title"] = "Kurumsal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .i {
+        color: darkgoldenrod;
+    }
+    h1 {
+        color: darkred;
+    }
+    .p, ol, .li {
+        font-family: 'Montserrat', sans-serif;
+        font-size:large;
+        font-weight:700;
+    }
+    h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size:xx-large;
+        font-weight:bold;
+    }
+    .card {
+        box-shadow: -1px 9px 40px -12px #808080;
+    }
+</style>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            @foreach (var item in Model.misyonumuzs)
+            {
+                <div class="card-title">
+                    <h1>@item.title</h1>
+                </div>
+                <hr />
+                <p class="p">@item.content</p>
+            }
+
+        </div>
+    </div>
+
+    <br />
+    <div class="card">
+        <div class="card-body">
+            @foreach (var item in Model.vizyons)
+            {
+                <h1>@item.title</h1>
+                <hr />
+                <ol>
+                    @foreach (var itm in Model.vizyonLists)
+                    {
+                        <li class="li">@itm.content</li>
+                    }
+                </ol>
+                <p class="p"><b><i class="i">Arz Eden :</i></b> @item.arz</p>
+                <p class="p"><b><i class="i">Talep Eden :</i></b> @item.talep</p>
+                <p class="p">@item.content</p>
+            }
+
+        </div>
+    </div>
+</div>
+<br />

@@ -1,0 +1,73 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(0deg, #fff, #000);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/*Card and Animation*/
+.card {
+    background: linear-gradient(0deg, #000, #272727);
+}
+
+    .card:before, .card:after {
+        content: '';
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000);
+        background-size: 400%;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        z-index: -1;
+        animation: steam 20s linear infinite;
+    }
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.card:after {
+    filter: blur(50px);
+}
+
+.control-label {
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.btn {
+    transition-duration: 0.3s;
+}
+
+    .btn :hover {
+        color: white;
+    }
+
+
+/*Logo*/
+.cls-1, .cls-2 {
+    fill: #fff;
+    stroke-miterlimit: 10;
+}
+
+.cls-1 {
+    stroke: #1d1d1b;
+    stroke-linecap: round;
+}
+
+.cls-2 {
+    stroke: #0b0b0b;
+}
+/*Logo*/

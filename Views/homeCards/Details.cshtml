@@ -1,0 +1,43 @@
+﻿@model shnYapi5._0.Entity.homeCards
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutEdit.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>homeCards</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-12">
+            Resim
+        </dt>
+        <dd class="col-sm-12">
+            <img src="@("~/cardImg/"+Model.imgYol)" alt="@Model.imgYol" asp-append-version="true" class="img-thumbnail" />
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.baslik)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.baslik)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.aciklama)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.aciklama)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.icerik)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.icerik)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.cardID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

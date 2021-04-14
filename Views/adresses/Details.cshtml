@@ -1,0 +1,55 @@
+﻿@model shnYapi5._0.Entity.adress
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutEdit.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>adress</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mahalle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mahalle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.sokak)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.sokak)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isYeri)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isYeri)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.No)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.No)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ilce)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ilce)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.sehir)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.sehir)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.adresID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

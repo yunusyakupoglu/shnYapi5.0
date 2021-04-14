@@ -1,0 +1,66 @@
+﻿@model IEnumerable<shnYapi5._0.Entity.adress>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutEdit.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.mahalle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sokak)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isYeri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ilce)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sehir)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.mahalle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sokak)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isYeri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ilce)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sehir)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.adresID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.adresID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.adresID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

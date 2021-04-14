@@ -1,0 +1,54 @@
+﻿@model IEnumerable<shnYapi5._0.Entity.homeParagraph>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutEdit.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.section1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.section2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.section3)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.section1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.section2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.section3)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.paragraphID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.paragraphID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.paragraphID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

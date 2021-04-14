@@ -1,0 +1,73 @@
+﻿@model shnYapi5._0.Entity.proje
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutEdit.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>proje</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="projeAdi" class="control-label"></label>
+                <input asp-for="projeAdi" class="form-control" />
+                <span asp-validation-for="projeAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="projeBasligi" class="control-label"></label>
+                <input asp-for="projeBasligi" class="form-control" />
+                <span asp-validation-for="projeBasligi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="imgFile" class="control-label"></label>
+                <input asp-for="imgFile" accept="image/*"/>
+                <span asp-validation-for="imgFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="icerik" class="control-label"></label>
+                <textarea asp-for="icerik" id="editor" class="form-control"></textarea>
+                <span asp-validation-for="icerik" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-danger" /> |
+                <a asp-action="List" class="btn btn-info">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script>
+    tinymce.init({
+        selector: '#editor',
+        menubar: false,
+        statusbar: false,
+        plugins: 'autoresize anchor autolink charmap code codesample directionality fullpage help hr image imagetools insertdatetime link lists media nonbreaking pagebreak preview print searchreplace table template textpattern toc visualblocks visualchars',
+        toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help fullscreen ',
+        skin: 'bootstrap',
+        toolbar_drawer: 'floating',
+        min_height: 200,
+        autoresize_bottom_margin: 16,
+        setup: (editor) => {
+            editor.on('init', () => {
+                editor.getContainer().style.transition = "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out"
+            });
+            editor.on('focus', () => {
+                editor.getContainer().style.boxShadow = "0 0 0 .2rem rgba(0, 123, 255, .25)",
+                    editor.getContainer().style.borderColor = "#80bdff"
+            });
+            editor.on('blur', () => {
+                editor.getContainer().style.boxShadow = "",
+                    editor.getContainer().style.borderColor = ""
+            });
+        }
+    });
+</script>
+
+

@@ -1,0 +1,40 @@
+﻿@model shnYapi5._0.Entity.proje
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h1>
+        @Html.DisplayFor(model => model.projeAdi)
+    </h1>
+    <hr />
+    <dl class="row">
+        <dd class="col-sm-12">
+            <img src="@("~/resimler/"+Model.imgYol)" alt="@Model.imgYol" asp-append-version="true" class="img-thumbnail" />
+        </dd>
+        @*<dt class="col-sm-12">
+            Proje Adı
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.projeAdi)
+        </dd>*@
+        @*<dt class="col-sm-12">
+            Başlık
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.projeBasligi)
+        </dd>*@
+
+        <dt class="col-sm-12">
+            Açıklama
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.icerik)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Projeler" class="btn btn-info">&larr; Projeler</a>
+</div>

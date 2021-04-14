@@ -1,0 +1,43 @@
+﻿@model shnYapi5._0.Entity.Haritalar
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutEdit.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Haritalar</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.x)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.x)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.y)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.y)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.aciklama)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.aciklama)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.haritaID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<shnYapi5._0.Entity.proje>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_LayoutEdit.cshtml";
+}
+
+<h1>Projeler <a class="btn btn-danger" asp-action="Create" style="float:right">Proje Ekle</a></h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.projeAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.projeBasligi)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.imgYol)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.icerik)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.projeAdi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.projeBasligi)
+                </td>
+                <!--<td>-->
+                    @*@Html.DisplayFor(modelItem => item.imgYol)*@
+                    <!--<img src="@("~/resimler/"+item.imgYol)" alt="@item.imgYol" asp-append-version="true" width="100px" height="100px" />
+                </td>-->
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.icerik)
+                </td>*@
+                <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.projeID">Edit</a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.projeID">Details</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.projeID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

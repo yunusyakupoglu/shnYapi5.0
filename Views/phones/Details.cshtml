@@ -1,0 +1,25 @@
+﻿@model shnYapi5._0.Entity.phone
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutEdit.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>phone</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.phoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.phoneNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.phoneID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
